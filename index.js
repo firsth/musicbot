@@ -1,10 +1,9 @@
 const discord = require('discord.js');
 const client = new discord.Client();
-const config = require('./config.json');
 const search = require('youtube-search');
 const opts = {
     maxResults: 10,
-    key: config.youtube_api,
+    key: process.env.youtube_api,
     type: 'video'
 }
 client.on('ready', () => {
@@ -14,7 +13,7 @@ client.on('ready', () => {
 client.on('message',async message => {
     if(message.author.bot) return;
 
-    if(message.content.toLowerCase()===config.prefix+'p'){
+    if(message.content.toLowerCase()===process.env.prefix+'p'){
         let embed = new discord.MessageEmbed()
             .setColor('#73ffdc')
             .setDescription("Lütfen aramak istediğiniz kelimeyi yazın.")
@@ -64,5 +63,5 @@ client.on('message',async message => {
     }    
 });   
 
-client.login(config.token);
+client.login(process.env.token);
 
