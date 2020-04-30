@@ -2,7 +2,6 @@ const discord = require('discord.js');
 const client = new discord.Client();
 const search = require('youtube-search');
 
-console.log(process.env.prefix);
 
 const opts = {
     maxResults: 10,
@@ -66,5 +65,5 @@ client.on('message',async message => {
     }    
 });   
 
-client.login(process.env.token);
+client.login(process.env.TOKEN);
 
