@@ -53,7 +53,7 @@ client.on('message',async message => {
             .setDescription(selected.description)
             .setThumbnail(selected.thumbnails.default.url)
             .setURL(selected.link)
-            .setTitle(selected.link);
+            .setTitle(selected.title);
             message.channel.send(embed);
 
             
