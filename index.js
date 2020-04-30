@@ -2,7 +2,7 @@ const discord = require('discord.js');
 const client = new discord.Client();
 const search = require('youtube-search');
 
-console.log(process.env.token);
+console.log(process.env.prefix);
 
 const opts = {
     maxResults: 10,
